@@ -2,9 +2,18 @@
 
 ## The situation
 
-Beanie runs on AWS, and its logs flow into CloudWatch Logs whether you asked or not. They sit there as JSON text, kept for ever by default (and billed for ever), and nobody reads them. Last Thursday the order error rate was 40% for fifteen minutes. The first person to notice was a customer who called the owner.
+```text
+WIRING GUIDE - noticing first                           Thursday, 40% order errors
+PARTS                     JOB
+Logs                      hold the lines (kept for ever by default, billed for ever)
+Metric filter             turns lines into numbers
+Metric math               turns two numbers into a rate
+Alarm                     watches the rate
+SNS topic                 carries the notification
+Dashboard                 shows it to the person who has been woken up
+```
 
-CloudWatch has everything you need to notice first, spread over six services that must be wired together: **Logs** hold the lines, a **metric filter** turns the lines into numbers, **metric math** turns two numbers into a rate, an **alarm** watches the rate, an **SNS topic** carries the notification, and a **dashboard** shows it all to the person who has been woken up. Each piece is small. The skill is knowing how they fit and where each one lies to you (missing data, delays, periods).
+Last Thursday the order error rate was 40% for fifteen minutes, and the first person to notice was a customer who called the owner. Beanie's logs flow into CloudWatch whether you asked or not, and nobody reads them. Each part above is small. The skill is knowing how they fit together and where each one lies to you (missing data, delays, periods).
 
 > **Your mission**
 > - Start an emitter that behaves like Beanie: every minute it writes 60 JSON request lines, and you control the failure rate
