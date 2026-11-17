@@ -50,7 +50,8 @@ fn = aws("lambda", "get-function", "--function-name", "beanie-emitter")
 check("the emitter function exists (run ./setup.sh)", bool(fn))
 if not fn:
     finish()
-ev = wait_for(lambda: (aws("logs", "filter-log-events", "--log-group-name", LG, "--limit", "1") or {}).get("events"), 150)
+# describe-log-streams is reliable; filter-log-events with a small --limit can return an empty page and a token even when events exist
+ev = wait_for(lambda: [x for x in ((aws("logs", "describe-log-streams", "--log-group-name", LG) or {}).get("logStreams") or []) if x.get("lastEventTimestamp")], 150)
 check("its log group has events", bool(ev))
 lg = (aws("logs", "describe-log-groups", "--log-group-name-prefix", LG) or {}).get("logGroups", [])
 lg = next((g for g in lg if g["logGroupName"] == LG), {})
