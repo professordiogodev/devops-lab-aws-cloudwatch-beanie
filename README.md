@@ -3,7 +3,7 @@
 | | |
 |-|-|
 | **Time** | 105-120 min |
-| **Cost** | free tier (a Lambda that runs once a minute, a few alarms, one dashboard) |
+| **Cost** | a few cents (a Lambda that runs once a minute, a few alarms, one dashboard) |
 | **You need** | An AWS administrator user, the AWS CLI v2, Python 3 and a terminal |
 
 ## How this lab works

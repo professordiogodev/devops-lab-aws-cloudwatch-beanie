@@ -10,7 +10,7 @@
 <text x="48" y="224" font-size="15" fill="#e2e8f0" opacity=".92" font-family="Segoe UI,Helvetica,Arial,sans-serif">numbers into an error rate (metric math), the rate into an alarm that</text>
 <text x="48" y="246" font-size="15" fill="#e2e8f0" opacity=".92" font-family="Segoe UI,Helvetica,Arial,sans-serif">notifies a topic, and everything into a dashboard. Then raise the…</text>
 <rect x="48" y="278" width="122" height="32" rx="16" fill="#ffffff" fill-opacity=".14" stroke="#fde047" stroke-opacity=".7"/><text x="62" y="299" font-size="14" fill="#ffffff" font-family="Segoe UI,Helvetica,Arial,sans-serif">105-120 min</text>
-<rect x="182" y="278" width="707" height="32" rx="16" fill="#ffffff" fill-opacity=".14" stroke="#fde047" stroke-opacity=".7"/><text x="196" y="299" font-size="14" fill="#ffffff" font-family="Segoe UI,Helvetica,Arial,sans-serif">Cost: free tier (a Lambda that runs once a minute, a few alarms, one dashboard)</text>
+<rect x="182" y="278" width="724" height="32" rx="16" fill="#ffffff" fill-opacity=".14" stroke="#fde047" stroke-opacity=".7"/><text x="196" y="299" font-size="14" fill="#ffffff" font-family="Segoe UI,Helvetica,Arial,sans-serif">Cost: a few cents (a Lambda that runs once a minute, a few alarms, one dashboard)</text>
 <g transform="translate(750,68)">
 <circle cx="110" cy="100" r="30" fill="none" stroke="#fde047" stroke-opacity=".35"/>
 <circle cx="110" cy="100" r="60" fill="none" stroke="#fde047" stroke-opacity=".35"/>
